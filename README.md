@@ -41,7 +41,7 @@ ecs.AddEntity(geralt);
 
 ### The HasName component
 
-So, what does the HasName component look like, and how does one retrieve the name of an entity, if it has one?
+So, what does the ```HasName``` component look like, and how does one retrieve the name of an entity, if it has one?
 
 ```cs
 public class HasName : Component
@@ -59,7 +59,7 @@ public class HasName : Component
 }
 ```
 
-A component extends one of the abstract ```Component```, ```UpdatableComponent``` or ```AsyncUpdatableComponent``` classes. (Note that AsyncUpdatableComponent extends UpdatableComponent which itself extends Component). The Initialise() method is for any initialisation logic that requires access to the ECS container or associated entity. HasName does not have to access either so the method is empty.
+A component extends one of the abstract ```Component```, ```UpdatableComponent``` or ```AsyncUpdatableComponent``` classes. (Note that ```AsyncUpdatableComponent``` extends ```UpdatableComponent``` which itself extends ```Component```). The ```Initialise()``` method is for any initialisation logic that requires access to the ECS container or the associated entity. ```HasName``` does not need to access either so the method is empty.
 
 Retrieving an Entity's name looks like:
 ```cs
@@ -70,11 +70,11 @@ var name = ecs.GetComponent<HasName>(geralt).Name; // name contains "Geralt"
 
 ### Updatable Components
 
-Components which update once per tick of the simulation extend UpdatableComponent and are required to implement the Update() method. A system for an updatable component must also be registered as updatable.
+Components which update once per tick of the simulation extend ```UpdatableComponent``` and are required to implement the ```Update()``` method. A system for an updatable component must also be registered as updatable.
 
-The Update() method returns an Action which is run after all components have updated. The reason for this is that if a component wants to change the state of the ECS it can invalidate the enumeration. So, a component should do any heavy CPU bound processing in the method body, and act on the result of that calculation in the action. A good example of this is a component which provides AI: it should work out what the entity wants to do this 'tick' in the body of the method, then try to take those actions in the returned Action.
+The ```Update()``` method returns an ```Action``` which is run after all components have updated. The reason for this is that if a component wants to change the state of the ECS it can invalidate the other updates in progress. So, a component should do any heavy CPU bound processing in the method body, and act on the result of that calculation in the action. A good example of this is a component which provides AI: it should work out what the entity wants to do this 'tick' in the body of the method, then try to take those actions in the returned ```Action```.
 
-An example updatable Component which just counts, and prints its count to the console in its final action:
+An example updatable ```Component``` which just counts, and prints its count to the console in its final action:
 ```cs
 public class Counts : UpdatableComponent
 {
@@ -94,30 +94,30 @@ public class Counts : UpdatableComponent
 
 ### Asynchronously Updatable Components
 
-An asynchronously updatable Component should extend AsyncUpdatableComponent. This gives it one extra method to override: UpdateAsync(), which returns a Task\<Action\>. It works much the same way as the updatable components, except the updates are run in parallel so have to be thread safe. Accessing the ECS's data is thread safe; altering it is not. As with the updatable component, changing the ECS's state must be done in the returned Action.
+An asynchronously updatable ```Component``` should extend ```AsyncUpdatableComponent```. This gives it one extra method to override: ```UpdateAsync()```, which returns a ```Task<Action>```. It works much the same way as the updatable components, except the updates are run in parallel so have to be thread safe. Accessing the ECS's data is thread safe; altering it is not. As with the updatable component, changing the ECS's state must be done in the returned ```Action```.
 
-With a small update the Counts component now counts in parallel, but reports to the console synchronously.
+With a small update the ```Counts``` component now counts in parallel, but reports to the console synchronously.
 
 ```cs
  public class CountsAsynchronously : AsyncUpdatableComponent
+{
+    public int Count { get; private set; }
+
+    public override Action Update()
     {
-        public int Count { get; private set; }
-
-        public override Action Update()
-        {
-            this.Count += 1;
-            return () => Console.WriteLine(this.Count);
-        }
-        
-        public override Task<Action> UpdateAsync()
-        {
-            return Task.Run((Func<Action>)this.Update);
-        }
-
-        protected override void Initialise()
-        {
-        }
+        this.Count += 1;
+        return () => Console.WriteLine(this.Count);
     }
+        
+    public override Task<Action> UpdateAsync()
+    {
+        return Task.Run((Func<Action>)this.Update);
+    }
+
+    protected override void Initialise()
+    {
+    }
+}
 ```
 
 ### Some more examples
