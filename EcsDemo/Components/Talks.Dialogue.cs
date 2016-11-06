@@ -4,8 +4,7 @@
     {
         public static string[] GeraltSpeaks => new[]
                                                    {
-                                                       "What now you piece of filth?!",
-                                                       "Drowner? I hardly knew 'er!",
+                                                       "What now, you piece of filth?!",
                                                        "That stench!",
                                                        "Wind's howling.",
                                                        "Damn, you're ugly."
