@@ -1,12 +1,12 @@
 # EcsDemo
-Lightweight, parallel ECS library demo based on The Witcher
+Lightweight, parallel ECS library demo based on The Witcher.
 
 ![alt text](https://github.com/Meeji/EcsDemo/raw/master/ecsdemo1.png "Geralt beats up some drowners Dwarf Fortress style")
 
 ## What is it?
 This is a simple working demo for a prototype parallel Entity-component-system library. I was interested in the ECS concept and decided to explore it further by writing a simple example. The ECS library allows for simple entity interactions, parallel component updates and exposes a simple fluent interface.
 
-The demo creates several entities based on the Witcher series of games and runs a simulation of them interacting. A more in depth description of the simulation's rules can be found at the bottom of this readme.
+The demo creates several entities based on the Witcher series of games and runs a simulation of them interacting. A more in-depth description of the simulation's rules can be found at the bottom of this readme.
 
 ## Overview
 The ECS container is created with a number of systems. The systems each manage the associations between entities and components. Components add behaviour and data to an entity, and each entity can have one component of each type. The ECS container can only have one system to manage a certain type of component. This allows one to dynamically add and remove behaviour, data and interactions to entities on-the-fly and without complex and unmanageable class heirarchies.
@@ -59,7 +59,7 @@ public class HasName : Component
 }
 ```
 
-A component extends one of the abstract Component, UpdatableComponent or AsyncUpdatableComponent classes. (Note that AsyncUpdatableComponent extends UpdatableComponent which itself extends Component). The Initialise() method is for any initialisation logic that requires access to the ECS container or associated entity. HasName does not have to access either so the method is empty.
+A component extends one of the abstract ```Component```, ```UpdatableComponent``` or ```AsyncUpdatableComponent``` classes. (Note that AsyncUpdatableComponent extends UpdatableComponent which itself extends Component). The Initialise() method is for any initialisation logic that requires access to the ECS container or associated entity. HasName does not have to access either so the method is empty.
 
 Retrieving an Entity's name looks like:
 ```cs
