@@ -4,7 +4,7 @@ Lightweight, parallel ECS library demo based on The Witcher
 ![alt text](https://github.com/Meeji/EcsDemo/raw/master/ecsdemo1.png "Geralt beats up some drowners Dwarf Fortress style")
 
 ## What is it?
-This is a simple working demo for a prototype parallel Entity-component-system library. I was interested in the ECS concept and decided to explore it further by writing a simple example. This ECS allows for simple entity interactions, parallel component updates and exposes an easily used fluent interface.
+This is a simple working demo for a prototype parallel Entity-component-system library. I was interested in the ECS concept and decided to explore it further by writing a simple example. The ECS library allows for simple entity interactions, parallel component updates and exposes a simple fluent interface.
 
 The demo creates several entities based on the Witcher series of games and runs a simulation of them interacting. A more in depth description of the simulation's rules can be found at the bottom of this readme.
 
