@@ -1,0 +1,10 @@
+﻿Witcher Geralt has a contract to kill drowners!
+He wanders aimlessly through a 32x32 grid.
+A random selection of 250 blocks contain trees which cannot be passed by Witcher or drowner.
+When a drowner emerges he immediately senses it with his enhanced witcher faculties.
+He chases the drowner down.
+When he is within 5 blocks of the drowner, the drowner sense Geralt and attempts to run away.
+If Geralt and a drowner occupy the same square the drowner is killed and Gerlat gains 5 orens.
+Once Geralt kills his target drowner he will chase the nearest drowner.
+If there are no drowners he'll go back to wandering.
+If two drowners occupy the same square one of them kills the other.

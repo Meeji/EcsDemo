@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcsDemo", "EcsDemo\EcsDemo.csproj", "{821A83AF-D2F2-41BF-AA00-22A9231204B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECS", "ECS\ECS.csproj", "{46A04365-EB5A-48C5-AAA8-A687ECF026F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathFinding", "PathFinding\PathFinding.csproj", "{73994ED6-35DD-413B-97FD-1A51860EB08E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{821A83AF-D2F2-41BF-AA00-22A9231204B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821A83AF-D2F2-41BF-AA00-22A9231204B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821A83AF-D2F2-41BF-AA00-22A9231204B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821A83AF-D2F2-41BF-AA00-22A9231204B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A04365-EB5A-48C5-AAA8-A687ECF026F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A04365-EB5A-48C5-AAA8-A687ECF026F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A04365-EB5A-48C5-AAA8-A687ECF026F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A04365-EB5A-48C5-AAA8-A687ECF026F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73994ED6-35DD-413B-97FD-1A51860EB08E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73994ED6-35DD-413B-97FD-1A51860EB08E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73994ED6-35DD-413B-97FD-1A51860EB08E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73994ED6-35DD-413B-97FD-1A51860EB08E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
