@@ -25,7 +25,7 @@ var ecs = new Ecs().WithSystem<HasName>();
 ### Creating an entity and giving it a component
 ```cs
 var ecs = new Ecs().WithSystem<HasName>();
-var geralt = ecs.NewEntity().WithComponent(new HasName("Geralt").Entity;
+var geralt = ecs.NewEntity().WithComponent(new HasName("Geralt")).Entity;
 ```
 
 alternatively:
