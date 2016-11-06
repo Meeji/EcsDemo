@@ -20,7 +20,6 @@ Iecs ecs = new Ecs();
 ### Creating an ECS container and adding a system
 ```cs
 var ecs = new Ecs().WithSystem<HasName>();
-// The HasName component simply attaches a name to an entity
 ```
 
 ### Creating an entity and giving it a component
