@@ -1,10 +1,12 @@
 # EcsDemo
-Lightweight, parallel ECS library demo
+Lightweight, parallel ECS library demo based on The Witcher
 
 ![alt text](https://github.com/Meeji/EcsDemo/raw/master/ecsdemo1.png "Geralt beats up some drowners Dwarf Fortress style")
 
 ## What is it?
 This is a simple working demo for a prototype parallel Entity-component-system library. I was interested in the ECS concept and decided to explore it further by writing a simple example. This ECS allows for simple entity interactions, parallel component updates and exposes an easily used fluent interface.
+
+The demo creates several entities based on the Witcher series of games and runs a simulation of them interacting. A more in depth description of the simulation's rules can be found at the bottom of this readme.
 
 ## Overview
 The ECS container is created with a number of systems. The systems each manage the associations between entities and components. Components add behaviour and data to an entity, and each entity can have one component of each type. The ECS container can only have one system to manage a certain type of component. This allows one to dynamically add and remove behaviour, data and interactions to entities on-the-fly and without complex and unmanageable class heirarchies.
@@ -169,4 +171,12 @@ private Entity CreateGeralt(IEcs ecs)
 }
 ```
 
-##
+## Example Simulation
+The example simulation tells the epic tale of Geralt the Witcher hunting drowners in a forest. This grant adventure is viewed in glorious 16-colour ASCII art reminiscent of Dwarf Fortress.
+
+The example simulation (Witcher Fortress) creates entities of three types which interact in a number of ways:
+* **Geralt**: Geralt is a monster hunter. He presues drowners and avoids trees. He'll occasionally shout taunts or comment on the weather (wind's howling). When he occupies the same space as a drowner he drowner will die and Geralt will gain 5 orens. Sometimes Geralt will have something to say when this happens. Geralt is represented by a purple **G**
+* **Drowner**: Drowners will wander aimlessly and gurgle until Geralt is within 5 sqaures of them. Then they'll flee until they're backed up against a tree or the edge of the map. Multiple drowners can occupy the same space. Drowners are represented by yellow **D**s
+* **Tree**: Trees get in the way. Trees are represented by green **T**s.
+
+When the simulation starts trees are put in 250 random locations on the map, drowners in 5 random locations and Geralt in a random location. When there are only 2 drowners left, 5 more are placed at a random location.
