@@ -14,6 +14,6 @@
         /// Any changes to the ECS's state should run in the action.
         /// </summary>
         /// <returns>Task which returns an action synchronously</returns>
-        public abstract Task<Action> AsyncUpdate();
+        public abstract Task<Action> UpdateAsync();
     }
 }

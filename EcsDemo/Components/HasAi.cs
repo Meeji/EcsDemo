@@ -66,7 +66,7 @@
                 };
         }
 
-        public override Task<Action> AsyncUpdate()
+        public override Task<Action> UpdateAsync()
         {
             return Task.Run((Func<Action>)this.Update);
         }

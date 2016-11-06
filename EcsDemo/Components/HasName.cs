@@ -11,10 +11,6 @@
 
         public string Name { get; }
 
-        public void Update()
-        {
-        }
-
         protected override void Initialise()
         {
         }

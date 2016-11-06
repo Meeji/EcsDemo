@@ -47,7 +47,7 @@
             {
                 foreach (var component in system.AllComponents())
                 {
-                    var task = component.AsyncUpdate();
+                    var task = component.UpdateAsync();
                     tasks.Add(task);
                 }
             }

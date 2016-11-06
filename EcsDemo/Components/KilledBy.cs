@@ -22,7 +22,7 @@
 
             if (locationSystem == null)
             {
-                throw new Exception("Location system couldn't be retrieved and cast"); // TODO: Custom exception type?
+                throw new InvalidCastException("Location system couldn't be retrieved and cast");
             }
 
             if (
